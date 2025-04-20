@@ -1,0 +1,315 @@
+:root {
+    --primary-color: #e5e7eb;
+    --secondary-color: #f3f4f6;
+    --accent-color: #4f46e5;
+    --text-color: #1f2937;
+    --background-color: #d1d5db;
+    --dark-bg: #102E50;
+    --dark-bg-secondary: #374151;
+    --light-text: #f3f4f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(90deg, var(--dark-bg), var(--dark-bg-secondary));
+    padding: 15px 20px;
+    z-index: 1000;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: var(--light-text);
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding-left: 200px;
+}
+
+.nav-menu li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: var(--accent-color);
+    background-color: rgba(79, 70, 229, 0.2);
+    border-radius: 5px;
+}
+
+aside {
+    width: 270px;
+    background: var(--dark-bg);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    top: 0;
+    padding-top: 70px;
+}
+
+aside img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+aside h2, aside p {
+    color: var(--light-text);
+}
+
+aside .links a {
+    display: inline-block;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.linkedin-logo, .github-logo {
+    fill: var(--accent-color);
+    transition: fill 0.3s ease;
+}
+
+.linkedin-logo:hover, .github-logo:hover {
+    fill: var(--light-text);
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 10px;
+    background: var(--accent-color);
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: #3b82f6; /* Brighter blue for hover effect */
+    color: #ffffff; /* Ensure text remains white */
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.5); /* Add a subtle shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+main {
+    margin-left: 270px;
+    padding: 60px 20px;
+    flex-grow: 1;
+}
+
+section {
+    padding: 40px;
+    margin-bottom: 30px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-margin-top: 60px;
+}
+
+h1 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+    color: var(--text-color);
+}
+
+hr {
+    border: 1px solid var(--secondary-color);
+    margin: 20px 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section ul {
+    list-style: none;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    header {
+        padding: 10px 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 15px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, var(--dark-bg), var(--dark-bg-secondary));
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .nav-menu li a {
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+    }
+
+    .nav-menu li a:hover {
+        background-color: rgba(79, 70, 229, 0.25);
+    }
+
+    aside {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        padding-top: 20px;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    section {
+        padding: 20px;
+        scroll-margin-top: 50px;
+    }
+
+    aside img {
+        width: 80px;
+        height: 80px;
+    }
+
+    aside .links a {
+        margin: 5px;
+    }
+
+    .linkedin-logo, .github-logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hamburger {
+        font-size: 24px;
+    }
+
+    .nav-menu li a {
+        font-size: 14px;
+    }
+
+    aside img {
+        width: 60px;
+        height: 60px;
+    }
+
+    aside .links a {
+        margin: 3px;
+    }
+
+    .linkedin-logo, .github-logo {
+        width: 18px;
+        height: 18px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .resume-btn {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
